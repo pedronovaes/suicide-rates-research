@@ -27,8 +27,6 @@ def get_suicide_data(year):
     # Download data
     df = wb.download(country=countries, indicator='SH.STA.SUIC.P5', start=year, end=year) \
            .reset_index() \
-           .rename(columns=str.upper) \
-           .rename(columns={'SH.STA.SUIC.P5': 'SH.STA.SUIC.P5_{}'.format(year)}) \
-           .drop('YEAR', axis=1)
+           .rename(columns=str.upper)
 
     return df
