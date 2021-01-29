@@ -23,9 +23,8 @@ countries = [
 ]
 
 
-def get_suicide_data(year):
-    # Download data
-    df = wb.download(country=countries, indicator='SH.STA.SUIC.P5', start=year, end=year) \
+def get_wb_data(indicator, year):
+    df = wb.download(country=countries, indicator=indicator, start=year, end=year) \
            .reset_index() \
            .rename(columns=str.upper)
 
